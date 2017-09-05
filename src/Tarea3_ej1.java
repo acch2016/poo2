@@ -17,6 +17,7 @@ public class Tarea3_ej1 {
 		int word_num = Integer.parseInt(JOptionPane.showInputDialog("How many words are you going to enter?: \n"));		
 		char[][]text = new char[word_num][]; 
 		int n = 0;
+		
 		/** This control structure */
 		do{
 			n = n + 1;
@@ -32,7 +33,9 @@ public class Tarea3_ej1 {
 			/** The next line of code makes a cast of the String word to a char Array 
 			 * and the nth row of text matrix will be pointing to the words the user entered */
 			text[n-1] = word.toCharArray();
+			
 		}while(word_num != n);
+		
 		/** Print matrix */
 		for(int r = 0; r < text.length; r ++)
 			System.out.println(Arrays.toString(text[r]));
