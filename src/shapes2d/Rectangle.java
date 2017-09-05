@@ -1,24 +1,33 @@
 package shapes2d;
 
 public class Rectangle {
-
-	public double base = 1.0;// si hacemos: // private double base = 1.0;// 
+	
+//	Si no se inicializan, su valor por default es cero
+	public double base   = 1.0; // private double base = 1.0;
 	public double height = 1.0;
 	
-	public double area (){
+	public double area() {
 		return base * height;
-	};
+	}
 	
-	public double perimeter (){
+	public double perimeter() {
 		return 2 * (base + height);
-	};
+	}
 	
-	public void print () {
-		System.out.printf("base: %2.1f, height: %2.1f, area: %2.1f, perimeter: %3.1f\n",base, height, area(), perimeter());
-		Rectangle r = new Rectangle();
-		r.base = 0;// si hacemos: // private double base = 1.0; en la linea 5 // se puede acceder en esta misma clase Rectangle pero en test Rectangle habría el problema de no poder leer el atributo base
-	};
-	
-	
-	
+	public void print() {
+		System.out.printf("{base: %5.1f, height: %5.1f, area: %7.2f, perimeter: %6.2f}\n",
+				          base, height, area(), perimeter());
+		
+//		Si el objeto Rectangle está creado en la misma clase Rectangle
+//		todos los miembros son públicos
+//		Rectangle r = new Rectangle();
+//		r.base ++;
+        
+        // si hacemos:
+        // private double base = 1.0; en la linea 5
+        // el atributo base se puede acceder ya que está en
+        // esta misma clase Rectangle pero
+        // en TestRectangle no se podría leer
+	}
+
 }
