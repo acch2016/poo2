@@ -1,6 +1,6 @@
-/** The following line of code is for importing methods contained on Array Class */
+/** The following line of code is for importing Array Class */
 import java.util.Arrays;
-/** The following line of code is for importing methods contained on JOptionPane Class */
+/** The following line of code is for importing JOptionPane Class */
 import javax.swing.JOptionPane;
 /** This program 
  * @author alejandrocanale
@@ -18,25 +18,28 @@ public class Tarea3_ej1 {
 		char[][]text = new char[word_num][]; 
 		int n = 0;
 		
-		/** This control structure */
+		/* This control structure */
 		do{
 			n = n + 1;
-			/** The next line of code will be displayed asking for the different words the user is going to enter. 
+			/* The next line of code will be displayed asking for the different words the user is going to enter. 
 			 *   A String word will be pointing to the words entered by the user 
 			 */
 			String word = JOptionPane.showInputDialog("Word "+ n +": \n");
 			
-			/** The next line of code creates a new char Array object 
+			/* The next line of code creates a new char Array object 
 			 * and the nth row of text matrix will be pointing to a new char object */
 			text[n-1] = new char[word.length()];
-			
-			/** The next line of code makes a cast of the String word to a char Array 
-			 * and the nth row of text matrix will be pointing to the words the user entered */
-			text[n-1] = word.toCharArray();
+			for(int i = 0; i < word.length(); i ++ ){
+				text[n-1][i] = word.charAt(i);
+			}
+			/* The next line of code makes a cast of the String word to a char Array 
+			 * and the nth row of text matrix will be pointing to the words the user entered 
+			 * It could be used instead three lines above */			
+			//text[n-1] = word.toCharArray();
 			
 		}while(word_num != n);
 		
-		/** Print matrix */
+		/* Print matrix */
 		for(int r = 0; r < text.length; r ++)
 			System.out.println(Arrays.toString(text[r]));
 		

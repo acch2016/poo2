@@ -1,4 +1,4 @@
-/** The following line of code is for importing methods contained on Array Class */
+/** The following line of code is for importing Array Class */
 import java.util.Arrays;
 
 /** This program compares two arrays from the first element to the k element.
