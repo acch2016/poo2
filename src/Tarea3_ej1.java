@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
  * @author alejandrocanale
  * @version 1.0
  */
-public class Tarea3_ej1 {
+public class Tarea3_Ej1 {
 
 	/** Este metodo es invocado automaticamente al ejecutar una clase en Java.
 	 * @param args Lista de argumentos separados por espacio incluidos en la ejecucion del programa.

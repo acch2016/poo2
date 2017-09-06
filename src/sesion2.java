@@ -1,5 +1,5 @@
 
-public class sesion2 {
+public class Sesion2 {
 
 	public static void main(String[] args) {
 		long l1 = 2_147_483_648L; // 3_000_000_000L; //con L indicas usar 64 bits

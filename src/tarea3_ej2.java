@@ -1,3 +1,4 @@
+/** This way of comment is for methods Classes and public attributes */
 /** The following line of code is for importing Array Class */
 import java.util.Arrays;
 
@@ -7,7 +8,7 @@ import java.util.Arrays;
  * @author alejandrocanale
  * @version 1.0
  */
-public class tarea3_ej2 {
+public class Tarea3_Ej2 {
 	/** Este metodo es invocado automaticamente al ejecutar una clase en Java.
 	 * @param args Lista de argumentos separados por espacio incluidos 
 	 * en la ejecucion del programa.

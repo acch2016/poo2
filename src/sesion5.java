@@ -1,6 +1,6 @@
 import javax.swing.JOptionPane;
 
-public class sesion5 {
+public class Sesion5 {
 
 	public static void main(String[] args) {
 //		int aPasar = (int) (32 * Math.random());

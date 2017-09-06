@@ -1,7 +1,7 @@
 
 import javax.swing.JOptionPane;
 
-public class sesion3 {
+public class Sesion3 {
 
 	public static void main(String[] args) {
 		byte b1 = (byte) 256; //quedate con los menos significativos

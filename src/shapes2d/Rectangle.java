@@ -3,8 +3,30 @@ package shapes2d;
 public class Rectangle {
 	
 //	Si no se inicializan, su valor por default es cero
-	public double base   = 1.0; // private double base = 1.0;
-	public double height = 1.0;
+	private double base   = 1.0; // private double base = 1.0;
+	private double height = 1.0;
+	
+	public Rectangle(){
+
+	}
+	
+	public Rectangle( double base){
+		setBase(base);
+
+	}
+	
+//	public Rectangle( double height){
+//		setBase(height);
+//
+//	}
+	
+	//no tiene tipo devuelto
+	//para no restringir la crecion de objetos
+	public Rectangle( double base, double height){
+		setBase(base);
+		setHeight(height);
+		
+	}
 	
 	public double area() {
 		return base * height;
@@ -28,6 +50,27 @@ public class Rectangle {
         // el atributo base se puede acceder ya que está en
         // esta misma clase Rectangle pero
         // en TestRectangle no se podría leer
+	}
+	
+	public void setBase(double base){
+		//color cafe variebles de metodo / variables locales
+//		base = b;
+		//if (b >= 1.0) base = b;
+		if (base >= 1.0) this.base = base;
+		
+	}
+	
+	public double getBase(){
+		return base;
+	}
+
+	public void setHeight(double height) {
+		if (height >= 1.0) this.height = height;
+		
+	}
+	
+	public double getHeight() {
+		return height;
 	}
 
 }

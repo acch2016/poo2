@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class sesion6 {
+public class Sesion6 {
 
 	public static void main(String[] args) {
 		int rows = 10;

@@ -1,6 +1,6 @@
 import javax.swing.JOptionPane;
 
-public class Tarea1_ej2 {
+public class Tarea1_Ej2 {
 	
 	public static void main(String[] args) {
 		

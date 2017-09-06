@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 * @author alejandrocanale
 * @version 1.0
 */
-public class Tarea2_ej3 {
+public class Tarea2_Ej3 {
 	/** Este metodo es invocado automaticamente al ejecutar una clase en Java.
 	 * @param args Lista de argumentos separados por espacio incluidos en la ejecucion del programa.
 	 * @return No devuelve nada porque la aplicacion acaba al terminar el metodo (porque es void)
