@@ -54,5 +54,18 @@ public class RGBColor {
 	public int getCyan() {
 		return 255 - this.red;
 	}
+	
+	public int getMagenta() {
+		return 255 - this.green;
+	}
+	
+	public int getYellow() {
+		return 255 - this.blue;
+	}
+	
+	public int getRGB() {
+		return 0;
+	}
+	 
 
 }
