@@ -1,5 +1,6 @@
 package tests;
 
+import com.iteso.model.RGBColor; 
 public class TestRGBColor {
 
 	public static void main(String[] args) {
