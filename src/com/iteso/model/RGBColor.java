@@ -65,6 +65,20 @@ public class RGBColor {
 		return hexa;
 	}
 	
+	public int setRGB(int hex) {
+		if( hex >= 0 && hex <= 0xFFFFFF ) {
+			this.blue  = hex & 0xFF;
+			this.green = (hex >>  8) & 0xFF;
+			this.red   = (hex >> 16) & 0xFF;
+		}
+		
+		int hexa = 0;
+		hexa = red<<16 | green<<8 | blue;
+		return hexa;
+	}
+	
+	
+	
 	public String toString(){
 		return String.format("{red: %d, green: %d, blue: %d, name: %s}", 
 				              this.red, this.green, this.blue, this.name);
