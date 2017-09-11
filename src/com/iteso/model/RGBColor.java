@@ -59,22 +59,23 @@ public class RGBColor {
 	public int getYellow() {
 		return 255 - this.blue;
 	}
+	
+	public void setCMY(int hex) {
+		
+	}
+	
 	public int getRGB() {
 		int hexa = 0;
 		hexa = red<<16 | green<<8 | blue;
 		return hexa;
 	}
 	
-	public int setRGB(int hex) {
+	public void setRGB(int hex) {
 		if( hex >= 0 && hex <= 0xFFFFFF ) {
-			this.blue  = hex & 0xFF;
-			this.green = (hex >>  8) & 0xFF;
-			this.red   = (hex >> 16) & 0xFF;
+			this.blue  = ( hex &     0xFF );
+			this.green = ((hex &   0xFF00) >>  8);
+			this.red   = ((hex & 0xFF0000) >> 16);
 		}
-		
-		int hexa = 0;
-		hexa = red<<16 | green<<8 | blue;
-		return hexa;
 	}
 	
 	
