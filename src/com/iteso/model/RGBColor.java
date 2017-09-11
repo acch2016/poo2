@@ -1,4 +1,5 @@
 package com.iteso.model;
+//import shapes2d.Rectangle;
 public class RGBColor {
 	private int red = 127, green = 127, blue = 127;
 	private String name = "Gris";
@@ -22,8 +23,8 @@ public class RGBColor {
 		System.out.printf("{ %3d %3d %3d -> %-16s }\n",
 				red, green, blue, name);
 	}
-	public void printRGB(int hexa){
-		System.out.printf("Value RGB: %08X\n",hexa);
+	public void printRGB(){
+		System.out.printf("Value RGB: %08X\n",getRGB());
 	}
 	public int getRed() {
 		return red;
@@ -62,5 +63,21 @@ public class RGBColor {
 		int hexa = 0;
 		hexa = red<<16 | green<<8 | blue;
 		return hexa;
+	}
+	
+	public String toString(){
+		return String.format("{red: %d, green: %d, blue: %d, name: %s}", 
+				              this.red, this.green, this.blue, this.name);
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if(!(o instanceof RGBColor)) return false; 
+		RGBColor rgbColor = (RGBColor) o;
+		return this.blue == rgbColor.blue && this.green == rgbColor.green && this.red == rgbColor.red; 
+	} 
+	
+	public RGBColor clone() {
+		return new RGBColor(this.red, this.green, this.blue, this.name);
 	}
 }

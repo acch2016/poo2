@@ -72,5 +72,22 @@ public class Rectangle {
 	public double getHeight() {
 		return height;
 	}
+	
+//	Sobreescritura del método toString() de la clase Object
+	@Override
+	public String toString() {
+		return String.format("{base: %.1f, height: %.1f}", this.base, this.height);
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if(!(o instanceof Rectangle)) return false; 
+		Rectangle r = (Rectangle) o;
+		return this.base == r.getBase() && this.height == r.getHeight(); 
+	}
+	
+	public Rectangle clone() {
+		return new Rectangle(this.base, this.height);
+	}
 
 }
