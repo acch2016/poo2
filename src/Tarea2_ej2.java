@@ -34,7 +34,7 @@ public class Tarea2_Ej2 {
 		int alphaInt = Integer.parseInt(alphaStr, 10);
 
 
-		/** The number variable is used for saving all the ARGB components */
+		/* The number variable is used for saving all the ARGB components */
 		long number = 0;
 		
 		number = blueInt;
@@ -45,11 +45,11 @@ public class Tarea2_Ej2 {
 
 		number |=  alphaInt << 24;
 
-	 	 /**The next line of code allows gives format according to the specified arguments. 
-	 	  * X is for Hexadecimal values.
-	   	  */
+	 	 /*The next line of code allows gives format according to the specified arguments. 
+	 	  * X is for Hexadecimal values.*/
+	   	  
 		String mssg = String.format( "ARGB: %X", number);
-		/** The next line of code is for showing a information message */
+		/* The next line of code is for showing a information message */
 		JOptionPane.showMessageDialog(null, mssg, "Message", JOptionPane.INFORMATION_MESSAGE);
 	}
 

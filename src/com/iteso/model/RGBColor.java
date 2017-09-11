@@ -1,23 +1,16 @@
 package com.iteso.model;
-
 public class RGBColor {
-
 	private int red = 127, green = 127, blue = 127;
 	private String name = "Gris";
-	
 	public RGBColor(){
-		
 	}
-	
 	public RGBColor( int red, int green, int blue ){
 		setRed(red);
 		setGreen(green);
 		setBlue(blue);
 		//Llamada a un tercer constructor
 //		this(red,green,blue,"Indefinido");
-		
 	}
-	
 	public RGBColor( int red, int green, int blue, String name ){
 		this(red,green,blue);
 //		setRed(red);
@@ -25,7 +18,13 @@ public class RGBColor {
 //		setBlue(blue);
 		setName(name);
 	}
-	
+	public void print() {
+		System.out.printf("{ %3d %3d %3d -> %-16s }\n",
+				red, green, blue, name);
+	}
+	public void printRGB(int hexa){
+		System.out.printf("Value RGB: %08X\n",hexa);
+	}
 	public int getRed() {
 		return red;
 	}
@@ -50,22 +49,18 @@ public class RGBColor {
 	public void setName(String name) {
 		if( name != null ) this.name = name;
 	}
-	
 	public int getCyan() {
 		return 255 - this.red;
 	}
-	
 	public int getMagenta() {
 		return 255 - this.green;
 	}
-	
 	public int getYellow() {
 		return 255 - this.blue;
 	}
-	
 	public int getRGB() {
-		return 0;
+		int hexa = 0;
+		hexa = red<<16 | green<<8 | blue;
+		return hexa;
 	}
-	 
-
 }
