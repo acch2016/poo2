@@ -33,8 +33,33 @@ public class TestRGBColor {
 //		Imprima en hexadecimal el valor RGB de c3
 		Carmesi.printRGB();
 		
+		RGBColor c6 = new RGBColor(0xFF5601);
+		c6.print();
+		c6.printRGB();
+		
+		RGBColor c7 = new RGBColor();
+		System.out.println(c7);
+		
+		c7.setCMY(0xFF0077); //ya funciona
+		System.out.println(c7);
+		
+		c7.setRGB(0xFF0077);
+		System.out.println(c7);
 		
 		
+//		Deben dar el complemento de lo que le envíe
+		c7.setCyan(64);
+		System.out.println(c7);
+		
+		c7.setMagenta(100);  //ya funciona
+		System.out.println(c7);
+		
+		c7.setYellow(200);//ya funciona
+		System.out.println(c7);
+		
+		System.out.printf("%x, %x\n", c7.getRGB(), c7.getCMY());
+		
+		c7.printCMY();
 		
 
 	}
