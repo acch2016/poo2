@@ -6,26 +6,28 @@ public class Rectangle {
 	private double base   = 1.0; // private double base = 1.0;
 	private double height = 1.0;
 	
+	public final double baseMin;
+	
 	public Rectangle(){
-
+		this.baseMin = 1.0;
 	}
 	
 	public Rectangle( double base){
+		this.baseMin = base;
 		setBase(base);
-
 	}
 	
+//	No es válido porque ya hay otro constructor que recibe un double
 //	public Rectangle( double height){
 //		setBase(height);
-//
 //	}
 	
 	//no tiene tipo devuelto
 	//para no restringir la crecion de objetos
 	public Rectangle( double base, double height){
+		this.baseMin = 10 * Math.random();
 		setBase(base);
 		setHeight(height);
-		
 	}
 	
 	public double area() {
@@ -91,6 +93,8 @@ public class Rectangle {
 	}
 	
 	protected void finalize(){
+//		this apunta al objeto que se eliminará
+//		En la concatenación se invoca a toString() del objeto
 		System.out.println("Se destruye: " + this);
 	}
 
