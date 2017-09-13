@@ -89,5 +89,9 @@ public class Rectangle {
 	public Rectangle clone() {
 		return new Rectangle(this.base, this.height);
 	}
+	
+	protected void finalize(){
+		System.out.println("Se destruye: " + this);
+	}
 
 }

@@ -47,6 +47,8 @@ public class TestRectangle {
 		
 		Rectangle r6 = new Rectangle(20.5); // r6 = < 20.0,1.0 >
 		r6.print();
+		
+		if(r5.equals(""));
 	
 		
 	}
