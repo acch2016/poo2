@@ -6,8 +6,7 @@ public class Date {
 	private int day = 1, month = 1, year = 1;
 	private String monthName;
 	private int format = 0;
-	
-	/* Constructors */
+
 	public Date(){
 	}
 	
