@@ -22,7 +22,7 @@ public class Date {
 	
 	public Date(int day, int month, int year, int format){
 		this(day,month,year);
-		setFormat(name);
+		setFormat(format);
 	}
 	
 	/* Getters and Setters */
