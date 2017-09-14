@@ -14,7 +14,7 @@ public class Date {
 	
 	public Date(int day, int month, int year){
 		setDay(month,day);
-		setMonth(month, monthName);
+		setMonth(month);
 		setYear(year);
 	}
 	
@@ -43,8 +43,9 @@ public class Date {
 		return month;
 	}
 
-	public void setMonth(int month, String monthName) {
-		if( month >= 1 && month <= 12 ) { this.month = month;
+	public void setMonth(int month) {
+		if( month >= 1 && month <= 12 ) { 
+			this.month = month;
 			switch (month){
 			case  1: this.monthName = "January";  break;
 			case  2: this.monthName = "February"; break;
@@ -59,6 +60,9 @@ public class Date {
 			case 11: this.monthName = "November"; break;
 			case 12: this.monthName = "December"; break;
 			}
+//			This next two lines of code were added in order to get requirements of f)
+			if ( ( 2 == month ) && ( 29 == this.day || 30 == this.day || 31 == this.day ) ) this.day = 28;
+			if ( ( 4 == month || 6 == month || 9 == month || 11 == month ) && ( 31 == this.day ) ) this.day = 30;
 		}		
 	}
 
@@ -85,7 +89,7 @@ public class Date {
 	/* Override methods */
 	public String toString(){
 		if( 0 == format){return String.format("%02d/%02d/%02d",this.day, this.month, this.year);}
-		if( 1 == format){return String.format("%d-%s-%d",this.day, this.monthName.substring(0, 2), this.year);}
+		if( 1 == format){return String.format("%d-%s-%d",this.day, this.monthName.substring(0, 3), this.year);}
 		return String.format("%d de %s de %d",this.day, this.monthName.toLowerCase(), this.year);
 	}
 	
@@ -96,22 +100,28 @@ public class Date {
 		return this.day == date.day && this.month == date.month && this.year == date.year; 
 	} 
 	
-	/* Other methods */
 	public Date clone() {
 		return new Date(this.day, this.month, this.year, this.format);
 	}
 	
-	public void next(int day, int month, int year){
+	/* Override method or Other method ?*/
+	public void next(){
 		
-		if ( 12 == month) { this.month = 1; this.year++; }
+		if ( 12 == this.month && 31 == this.day) { 
+			this.day = 1; this.month = 1; this.year ++; 
+			
+		} else if ( 2 == this.month && 28 == this.day ) {
+			this.day = 1; this.month ++;
+			
+		} else if (( 4 == month || 6 == month || 9 == month || 11 == month )&&( 30 == this.day )) { 
+			this.day = 1; this.month ++;
+			
+		} else if (( 1 == month || 3 == month || 5 == month || 7 == month || 8 == month || 10 == month )&&( 31 == this.day)) { 
+			this.day = 1; this.month ++;
 		
-		if ( 2 == month && 28 == day ) {
-			this.day = 1; this.month ++;
-		} else if (( 4 == month || 6 == month || 9 == month || 11 == month )&&( 30 == day )) { 
-			this.day = 1; this.month ++;
-		} else if (( 1 == month || 3 == month || 5 == month || 7 == month || 8 == month || 10 == month || 12 == month )&&( 31 == day)) { 
-			this.day = 1; this.month ++;
-		} 
+		} else {
+			this.day ++;
+		}
 	}
 
 }
