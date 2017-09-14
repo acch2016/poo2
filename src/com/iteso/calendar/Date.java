@@ -1,5 +1,5 @@
 package com.iteso.calendar;
-// quiero ver si funciona2
+// quiero ver si funciona3
 public class Date {
 	
 	/* Attributes o instance variables */
