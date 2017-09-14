@@ -2,21 +2,19 @@ package com.iteso.calendar;
 
 public class Date {
 	
-	/* Attributes o instance variables */
-	private int day = 1, month = 1, year = 1;
-	private String monthName;
+	/* Attributes or "instance variables" ? */
+	private int day = 1, month = 1, year = 2017;
+	private String monthName = "January";
 	private int format = 0;
 	
-	/*Constructores*/
-	
-	
+	/*Constructors*/
 
 	public Date(){
 	}
 	
 	public Date(int day, int month, int year){
 		setDay(month,day);
-		setMonth(month);
+		setMonth(month, monthName);
 		setYear(year);
 	}
 	
@@ -32,13 +30,11 @@ public class Date {
 	}
 
 	public void setDay(int month, int day) {
-		if ( 2 == month ){
+		if ( 2 == month ) {
 			if( day >= 1 && day <= 28 ) this.day = day;
-		}
-		if ( 4 == month || 6 == month || 9 == month || 11 == month ){
+		} else if ( 4 == month || 6 == month || 9 == month || 11 == month ) {
 			if( day >= 1 && day <= 30 ) this.day = day;
-		}
-		if ( 1 == month || 3 == month || 5 == month || 7 == month || 8 == month || 10 == month || 12 == month ){
+		} else if ( 1 == month || 3 == month || 5 == month || 7 == month || 8 == month || 10 == month || 12 == month ){
 			if( day >= 1 && day <= 31 ) this.day = day;
 		}
 	}
@@ -47,8 +43,23 @@ public class Date {
 		return month;
 	}
 
-	public void setMonth(int month) {
-		if( month >= 1 && month <= 12 ) this.month = month;
+	public void setMonth(int month, String monthName) {
+		if( month >= 1 && month <= 12 ) { this.month = month;
+			switch (month){
+			case  1: this.monthName = "January";  break;
+			case  2: this.monthName = "February"; break;
+			case  3: this.monthName = "March";    break;
+			case  4: this.monthName = "April";    break;
+			case  5: this.monthName = "May";      break;
+			case  6: this.monthName = "June";     break;
+			case  7: this.monthName = "July";     break;
+			case  8: this.monthName = "August";   break;
+			case  9: this.monthName = "September";break;
+			case 10: this.monthName = "October";  break;
+			case 11: this.monthName = "November"; break;
+			case 12: this.monthName = "December"; break;
+			}
+		}		
 	}
 
 	public int getYear() {
@@ -64,7 +75,7 @@ public class Date {
 	}
 
 	public void setFormat(int format) {
-		this.format = format;
+		if( format >= 0 && format <= 2 ) this.format = format;
 	}
 
 	public String getMonthName() {
@@ -73,9 +84,11 @@ public class Date {
 	
 	/* Override methods */
 	public String toString(){
-		return String.format("{day: %d, month: %d, year: %d, format: %d}", 
-				              this.day, this.month, this.year, this.format);
+		if( 0 == format){return String.format("%02d/%02d/%02d",this.day, this.month, this.year);}
+		if( 1 == format){return String.format("%d-%s-%d",this.day, this.monthName.substring(0, 2), this.year);}
+		return String.format("%d de %s de %d",this.day, this.monthName.toLowerCase(), this.year);
 	}
+	
 	@Override
 	public boolean equals(Object o) {
 		if(!(o instanceof Date)) return false; 
@@ -88,8 +101,19 @@ public class Date {
 		return new Date(this.day, this.month, this.year, this.format);
 	}
 	
-	public void next(){
+	public void next(int day, int month, int year){
 		
+		if ( 12 == month) { this.month = 1; this.year++; }
+		
+		if ( 2 == month && 28 == day ) {
+			this.day = 1; this.month ++;
+		} else if (( 4 == month || 6 == month || 9 == month || 11 == month )&&( 30 == day )) { 
+			this.day = 1; this.month ++;
+		} else if (( 1 == month || 3 == month || 5 == month || 7 == month || 8 == month || 10 == month || 12 == month )&&( 31 == day)) { 
+			this.day = 1; this.month ++;
+		} 
 	}
 
 }
+
+	
