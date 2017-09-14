@@ -1,5 +1,5 @@
 package com.iteso.calendar;
-
+// quiero ver si funciona
 public class Date {
 	
 	/* Attributes o instance variables */
@@ -8,6 +8,7 @@ public class Date {
 	private int format = 0;
 	
 	/* Constructors */
+	
 	public Date(){
 	}
 	
