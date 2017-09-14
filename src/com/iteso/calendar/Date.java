@@ -1,5 +1,5 @@
 package com.iteso.calendar;
-
+// quiero ver si funciona3
 public class Date {
 	
 	/* Attributes o instance variables */
@@ -7,7 +7,7 @@ public class Date {
 	private String monthName;
 	private int format = 0;
 	
-	/* Constructors */
+	/*Constructores*/
 	public Date(){
 	}
 	
