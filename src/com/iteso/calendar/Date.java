@@ -7,7 +7,7 @@ public class Date {
 	private String monthName;
 	private int format = 0;
 	
-	/*Constructores otra prueba*/
+	/*Constructores*/
 	
 	
 
@@ -21,6 +21,8 @@ public class Date {
 	}
 	
 	public Date(int day, int month, int year, int format){
+		this(day,month,year);
+		setFormat(name);
 	}
 	
 	/* Getters and Setters */
