@@ -14,7 +14,7 @@ public class TestDate {
 		System.out.println(d2);
 		
 //		c) Crear d3 como el clon de d1. [1 línea de código]
-		Date d3 = d2.clone();
+		Date d3 = d1.clone();
 		System.out.println(d3);
 		
 //		d) Crear d4: con el día de d1, el mes de d2, el año de d3 y el formato 1. [1 línea]
@@ -36,8 +36,15 @@ public class TestDate {
 //		h) Imprimir en consola el resultado de comparar d1 y d5. [1 línea de código]		
 		System.out.println(d1.equals(d5));
 		
-/*		i) Imprimir en consola las cinco fechas anteriores en los tres formatos.Para ello,
+/*		i) Imprimir en consola las cinco fechas anteriores en los tres formatos. Para ello,
 		guarde las fechas en un arreglo y utilice ciclo for-each. [5 líneas de código]        */
+		
+//  	 String [] strArray = { "Alpha:", "Red:", "Green:",  "Blue:" };
+//  	 long [] longArray = { alpha, red, green, blue };
+//  	 int i = 0, j = 0;
+//  	 for(String s: strArray ){
+//  		 System.out.printf("%-7s %3d [%02X]\n",s ,longArray[i++],longArray[j++]);
+//  	 }
 
 	}
 
