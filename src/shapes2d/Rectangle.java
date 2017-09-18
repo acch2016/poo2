@@ -88,10 +88,12 @@ public class Rectangle {
 		return this.base == r.getBase() && this.height == r.getHeight(); 
 	}
 	
+	@Override
 	public Rectangle clone() {
 		return new Rectangle(this.base, this.height);
 	}
 	
+	@Override
 	protected void finalize(){
 //		this apunta al objeto que se eliminará
 //		En la concatenación se invoca a toString() del objeto

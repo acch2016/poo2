@@ -87,6 +87,7 @@ public class Date {
 	}
 	
 	/* Override methods */
+	@Override
 	public String toString(){
 		if( 0 == format){return String.format("%02d/%02d/%02d",this.day, this.month, this.year);}
 		if( 1 == format){return String.format("%d-%s-%d",this.day, this.monthName.substring(0, 3), this.year);}
@@ -100,6 +101,7 @@ public class Date {
 		return this.day == date.day && this.month == date.month && this.year == date.year; 
 	} 
 	
+	@Override
 	public Date clone() {
 		return new Date(this.day, this.month, this.year, this.format);
 	}

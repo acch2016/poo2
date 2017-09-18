@@ -26,7 +26,7 @@ public class TestDate {
 		d5.next();
 		System.out.println(d5);
 		
-		//esto antes que cambie d3 //////////
+		//The next line of code before the pointer to d3 gets lost in part f //////////
 		Date d6 = d3.clone();
 		
 //		f) Cambiar el mes de d3 a Abril. [1 lines de code]
@@ -41,13 +41,6 @@ public class TestDate {
 		
 /*		i) Imprimir en consola las cinco fechas anteriores en los tres formatos. Para ello,
 		guarde las fechas en un arreglo y utilice ciclo for-each. [5 lines de code]        */
-	
-//  	 String [] strArray = { "Alpha:", "Red:", "Green:",  "Blue:" };
-//  	 long [] longArray = { alpha, red, green, blue };
-//  	 int i = 0, j = 0;
-//  	 for(String s: strArray ){
-//  		 System.out.printf("%-7s %3d [%02X]\n",s ,longArray[i++],longArray[j++]);
-//  	 }
 
 //		i'm going to print: d2, d3, d4, d5, d6
 		

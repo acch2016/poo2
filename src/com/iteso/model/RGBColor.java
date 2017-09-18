@@ -114,6 +114,7 @@ public class RGBColor {
 	
 	
 	
+	@Override
 	public String toString(){
 		return String.format("{red: %d, green: %d, blue: %d, name: %s}", 
 				              this.red, this.green, this.blue, this.name);
@@ -126,6 +127,7 @@ public class RGBColor {
 		return this.blue == rgbColor.blue && this.green == rgbColor.green && this.red == rgbColor.red; 
 	} 
 	
+	@Override
 	public RGBColor clone() {
 		return new RGBColor(this.red, this.green, this.blue, this.name);
 	}

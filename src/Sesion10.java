@@ -1,5 +1,3 @@
-import javax.swing.JOptionPane;
-
 import shapes2d.Rectangle;
 
 public class Sesion10 {

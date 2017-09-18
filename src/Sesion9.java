@@ -8,6 +8,7 @@ public class Sesion9 {
 			this.x = x;
 			this.y = y;
 		}
+		@Override
 		public String toString(){
 			return "Vec2";
 		}

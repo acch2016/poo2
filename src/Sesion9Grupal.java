@@ -12,6 +12,7 @@ public class Sesion9Grupal {
 			this.x = x;
 			this.y = y;
 		}
+		@Override
 		public String toString() {
 			return "Vec2";
 		}

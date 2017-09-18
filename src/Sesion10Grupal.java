@@ -14,6 +14,7 @@ public class Sesion10Grupal {
 			this.dblArray = new double[100_000_000];
 		}
 		
+		@Override
 		protected void finalize() {
 			System.out.println("Se elimina:" + id);
 		}
