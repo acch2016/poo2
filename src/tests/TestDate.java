@@ -1,7 +1,20 @@
 package tests;
 import com.iteso.calendar.Date;
-public class TestDate {
 
+/** This is a Java program where you can call the methods of the Class date
+ * @author alejandrocanale
+ * @version 1.0
+ * to do: Its the same “variables de instancia” que “atributos”?
+ * Se encontro que existe un metodo clone( ) en la superclase Object( ). Por lo tanto ¿Sera un metodo override?
+ */
+public class TestDate {
+	
+	/** This method is called automatically when a new class is executed on Java.
+	 * @param args Collection of arguments separated by space 
+	 * included in the execution of the program.
+	 * @return It doesn't return anything because 
+	 * the application just when the method finishes.
+	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
@@ -17,7 +30,7 @@ public class TestDate {
 		Date d3 = d1.clone();
 		System.out.println(d3);
 		
-//		d) Crear d4: con el day de d1, el mes de d2, el año de d3 y el formato 1. [1 line]
+//		d) Crear d4: con el day de d1, el mes de d2, el anÌƒo de d3 y el formato 1. [1 line]
 		Date d4 = new Date (d1.getDay(),d2.getMonth(),d3.getYear(),1);
 		System.out.println(d4);
 		
@@ -53,9 +66,6 @@ public class TestDate {
 				System.out.println(d);	
 			}
 		}
-		
-		
-
 	}
 
 }
