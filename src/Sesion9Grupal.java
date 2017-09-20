@@ -7,14 +7,23 @@ import shapes2d.Rectangle;
 public class Sesion9Grupal {
 
 	private static class Vec2 {
-		public double x, y;
+		private double x, y;
+		private static int instances = 0;
 		public Vec2(double x, double y) {
 			this.x = x;
 			this.y = y;
+//			instances ++;
+//			Aquí sí es válido porque sí hay un objeto involucrado en new Vec2()
+//			Pero no deberíamos llamarlo de esa manera
+			this.instances ++;
 		}
-		@Override
 		public String toString() {
 			return "Vec2";
+		}
+		public static int getInstances() {
+//			No válido porque podemos tener: Vec2.getInstances()
+//			return this.instances; 
+			return Vec2.instances;
 		}
 	}
 	
@@ -26,7 +35,7 @@ public class Sesion9Grupal {
 		System.out.printf("%.2f, %.2f\n", x, y);
 	}
 	
-	static void normalize(Vec2 v) { //porque cuando hay un metodo static, no existe el this
+	static void normalize(Vec2 v) {
 		double m = Math.sqrt(v.x * v.x + v.y * v.y);
 		v.x /= m;
 		v.y /= m;
@@ -53,13 +62,20 @@ public class Sesion9Grupal {
 		normalize(v);
 		System.out.printf("%.2f, %.2f\n", v.x, v.y);  // v = { 0.6, 0.8 }
 		
+		System.out.println("Instancias: " + v.getInstances());
+		
 		double[] xy = {x, y};
 		normalize(xy);
 		System.out.println(Arrays.toString(xy));  // xy[] = { 0.6, 0.8 }
 		
 		Vec2 u = new Vec2(4, 5);
-		toUnit(u);
+//		toUnit(u);
+		normalize(u);
 		System.out.printf("%.2f, %.2f\n", u.x, u.y);  // u = { 4.0, 5.0 }
+		
+		System.out.println("Instancias: " + u.getInstances());
+		System.out.println("Instancias: " + v.getInstances());
+		System.out.println("Instancias: " + Vec2.getInstances());
 		
 		System.out.println(u);
 		Rectangle r1 = new Rectangle(4, 6);
