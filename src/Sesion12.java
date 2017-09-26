@@ -1,8 +1,10 @@
 
-// no importa a la clase JOptionPane, sólo los métodos showMessageDialog
+// no importa a la clase JOptionPane, solo los metodos showMessageDialog
 import static javax.swing.JOptionPane.showMessageDialog;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.LocalDateTime;
 
 import javax.swing.JOptionPane;
 
@@ -47,6 +49,32 @@ public class Sesion12 {
 		System.out.println(date3.isBefore(date4));
 		System.out.println(date3.isAfter(date4));
 		
+//		1. Sea d1 la fecha actual
+		LocalDate d1 = LocalDate.now();
+		System.out.println(d1);
+		
+//		2. Sea d2 la fecha 23 de septiembre de 2015
+		LocalDate d2 = LocalDate.of(2015,9,23);
+		System.out.println(d2);
+	
+//		3. Compara d1 y d2 e imprime la fecha mas antigua.
+		if( d1.isAfter(d2) ){
+			System.out.println(d1);
+		}else if( d1.isBefore(d2)){
+			System.out.println(d2);
+		}
+		
+//		4. En una linea de codigo, sum 2 semanas a d1, y restale 4 años
+		d1 = d1.plusWeeks(2).minusYears(4);
+		System.out.println(d1);
+		
+//		5. Sea t1 la hora actual
+		LocalTime t1 = LocalTime.now();
+		System.out.println(t1);
+		
+//		6. Sea dt1 la fecha-hora creada a partir de la fecha de d2 y la hora de d1
+		LocalDateTime dt1 = LocalDateTime.of(d2, t1);
+		System.out.println(dt1);
 	}
 
 }
