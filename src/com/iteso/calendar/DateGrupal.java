@@ -1,15 +1,38 @@
 package com.iteso.calendar;
 
+import java.util.Calendar;
+
+import javax.swing.JOptionPane;
+
 public class DateGrupal {
 
-	public static final int MIN_YEAR = 1900;
-	public static final int MAX_YEAR = 3000;
+	public static final int MIN_YEAR; //= 1900;
+	public static final int MAX_YEAR; //= 3000;
 	
 	private int day = 1, month = 1, year = 2017;
 	private String monthName = "Enero";
 	private int format = 0;
 
+	
+//	¿En que momento se inicializan los atributos static? 
+//	En el primer uso de la clase
+	static {
+		String minYearStr = JOptionPane.showInputDialog("Año minimo: ");
+		String maxYearStr = JOptionPane.showInputDialog("Año minimo: ");
+//		MIN_YEAR = 1900;
+//		MAX_YEAR = 3000;
+		MIN_YEAR = Integer.parseInt(minYearStr);
+		MAX_YEAR = Integer.parseInt(maxYearStr);
+	}
+	
+	
 	public DateGrupal() {
+		Calendar c = Calendar.getInstance();
+		setYear (c.get(Calendar.YEAR));
+		setMonth(c.get(Calendar.MONTH)+1);
+		setDay  (c.get(Calendar.DAY_OF_MONTH));
+//		System.nanoTime();
+//		System.currentTimeMillis();
 	}
 
 	public DateGrupal(int day, int month, int year) {
