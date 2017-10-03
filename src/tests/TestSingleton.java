@@ -12,25 +12,25 @@ import com.iteso.model.Singleton;
 public class TestSingleton {
 
 	public static void main(String[] args) {
-//		DateGrupal today = new DateGrupal();
-//		today.setFormat(2);
-//		System.out.println(today);
-//		
-//		Calendar c1 = Calendar.getInstance();
-//		int day   = c1.get(Calendar.DAY_OF_MONTH);
-//		int month = c1.get(Calendar.MONTH) + 1;
-//		int year  = c1.get(Calendar.YEAR);
-//		System.out.println(Calendar.MONTH);
-//		System.out.println(Calendar.YEAR);
-//		System.out.println(day + "/" + month + "/" + year);
-//		
-//		JOptionPane.showMessageDialog(null, "Pausa");
-//		Calendar c2 = Calendar.getInstance();
-//		System.out.println(c1);
-//		System.out.println(c2);
-//		
-//		System.out.println(System.identityHashCode(c1));
-//		System.out.println(System.identityHashCode(c2));
+		DateGrupal today = new DateGrupal();
+		today.setFormat(2);
+		System.out.println(today);
+		
+		Calendar c1 = Calendar.getInstance();
+		int day   = c1.get(Calendar.DAY_OF_MONTH);
+		int month = c1.get(Calendar.MONTH) + 1;
+		int year  = c1.get(Calendar.YEAR);
+		System.out.println(Calendar.MONTH);
+		System.out.println(Calendar.YEAR);
+		System.out.println(day + "/" + month + "/" + year);
+		
+		JOptionPane.showMessageDialog(null, "Pausa");
+		Calendar c2 = Calendar.getInstance();
+		System.out.println(c1);
+		System.out.println(c2);
+		
+		System.out.println(System.identityHashCode(c1));
+		System.out.println(System.identityHashCode(c2));
 		
 		Singleton s1 = Singleton.getInstance();
 		Singleton s2 = Singleton.getInstance();
