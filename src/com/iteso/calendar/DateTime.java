@@ -55,8 +55,7 @@ public class DateTime extends DateGrupal{
 	
 	@Override
 	public boolean equals(Object o) {
-		if (!(o instanceof DateTime))
-			return false;
+		if (!(o instanceof DateTime))return false;
 		DateTime dt = (DateTime) o;
 		return this.hours == dt.getHours() && this.minutes == dt.getMinutes() && this.seconds == dt.getSeconds() && super.equals(dt);
 	}

@@ -14,7 +14,7 @@ public class TestBasicOscillator {
 		osc.setFrequency(500);
 		 
 		// Set the waveashape
-		osc.setOscWaveshape(WAVESHAPE.SIN);
+		osc.setOscWaveshape(WAVESHAPE.SQU);
 		   
 		// Create a sample player
 		SamplePlayer player = new SamplePlayer();

@@ -18,7 +18,7 @@ public class BasicOscillator implements SampleProviderIntfc {
    * Default instance has SIN waveshape at 1000 Hz
    */
   public BasicOscillator() {
- 
+
     // Set defaults
     setOscWaveshape(WAVESHAPE.SIN);
     setFrequency(1000.0);    
