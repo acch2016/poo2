@@ -1,22 +1,33 @@
 package com.iteso.calendar;
+import com.iteso.calendar.DateTime;
+//import com.iteso.calendar.DateGrupal; //porque no se usa? es decir que a traves de DateTime? :o
+import java.util.Calendar;
 
 public class Millis extends DateTime {
 	
-	private int milliseconds;
-	private long timestamp;
+	private int milliseconds = 0;
+	private long timestamp = 0;
 
 	public Millis() {
 		// TODO Auto-generated constructor stub
+		super();
+		Calendar c = Calendar.getInstance();
+		setMilliseconds(c.get(Calendar.MILLISECOND));
 	}
 
 	public Millis(int hh, int mi, int ss) {
 		super(hh, mi, ss);
 		// TODO Auto-generated constructor stub
 	}
+	
+//	At the beginning when the class was created:
+//	public Millis(Date d) {
+//		super(d);
+//	}
 
 	public Millis(Date d) {
 		super(d);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public Millis(int hh, int mi, int ss, int dd, int mm, int yy) {
@@ -52,6 +63,18 @@ public class Millis extends DateTime {
 		this.timestamp = timestamp;
 	}
 	
+	@Override
+	public String toString(){
+		if(getFormat() == 0)return String.format("[%02d:%02d:%02d.%03d] %02d/%02d/%02d", super.getHours(), super.getMinutes(), super.getSeconds(), this.milliseconds, super.getDay(), super.getMonth(), super.getYear());
+		else{
+			return "";
+		}
+	}
+	
+	@Override
+	public void setFormat(int format){
+		
+	}
 	
 
 }

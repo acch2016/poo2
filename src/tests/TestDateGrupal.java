@@ -28,18 +28,27 @@ public class TestDateGrupal {
 		System.out.println(DateGrupal.isValidDate(29,  2, 2016));  // true
 		System.out.println(DateGrupal.isValidDate(30,  2, 2016));  // false
 		System.out.println("---------------");
-		DateGrupal d1 = new DateGrupal(30, 4, 2016);
-		System.out.println(d1);
-		d1.setMonth(2);  // 30-feb-2016 no es válido, se ignora el cambio
-		System.out.println(d1);
+//		DateGrupal d1 = new DateGrupal(30, 4, 2016);
+//		System.out.println(d1);
+//		d1.setMonth(2);  // 30-feb-2016 no es válido, se ignora el cambio
+//		System.out.println(d1);
+//		
+//		d1.setDay(28);  //  28-abr-2016
+//		d1.setMonth(2); //  28-feb-2016
+//		System.out.println(d1);
+//		d1.next();      //  29-feb-2016
+//		System.out.println(d1);
+//		d1.next();      //   1-mar-2016
+//		System.out.println(d1);
 		
-		d1.setDay(28);  //  28-abr-2016
-		d1.setMonth(2); //  28-feb-2016
-		System.out.println(d1);
-		d1.next();      //  29-feb-2016
-		System.out.println(d1);
-		d1.next();      //   1-mar-2016
-		System.out.println(d1);
+		DateGrupal d2 = new DateGrupal(30, 4, 2016, 0);
+		System.out.println(d2);
+		
+		DateGrupal d3 = new DateGrupal(30, 4, 2016, 1);
+		System.out.println(d3);
+		
+		DateGrupal d4 = new DateGrupal(30, 4, 2016, 2);
+		System.out.println(d4);
 		
 	}
 
