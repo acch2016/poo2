@@ -1,7 +1,8 @@
 package tests;
-import com.iteso.calendar.DateTime;
+
 import com.iteso.calendar.Millis;
-//import com.iteso.calendar.Millis.timestampOf;
+import com.iteso.calendar.DateTime;
+import com.iteso.calendar.Date;
 
 
 public class TestMillis {
@@ -92,7 +93,13 @@ public class TestMillis {
 		
 		DateTime dt = new DateTime(20, 53, 17, 4, 10, 2017);
 		long timestamp1 = Millis.timestampOf(dt);
+		System.out.println(timestamp1);
 		 // 1507168397000
+		
+		Date d = new Date(4, 10, 2017);
+		long timestamp2 = Millis.timestampOf(d);
+		System.out.println(timestamp2);
+		// 1507093200000
 	
 	}
 
