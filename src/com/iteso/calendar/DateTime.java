@@ -107,7 +107,7 @@ public class DateTime extends DateGrupal{
 	}
 
 	public void setHours(int hours) {
-		if( hours >= 0 && hours <= 12 )this.hours = hours;
+		if( hours >= 0 && hours <= 23 )this.hours = hours;
 	}
 	
 	

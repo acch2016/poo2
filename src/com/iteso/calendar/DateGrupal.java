@@ -17,12 +17,12 @@ public class DateGrupal {
 //	¿En que momento se inicializan los atributos static? 
 //	En el primer uso de la clase
 	static {
-		String minYearStr = JOptionPane.showInputDialog("Año minimo: ");
-		String maxYearStr = JOptionPane.showInputDialog("Año minimo: ");
-//		MIN_YEAR = 1900;
-//		MAX_YEAR = 3000;
-		MIN_YEAR = Integer.parseInt(minYearStr);
-		MAX_YEAR = Integer.parseInt(maxYearStr);
+//		String minYearStr = JOptionPane.showInputDialog("Año minimo: ");
+//		String maxYearStr = JOptionPane.showInputDialog("Año minimo: ");
+	MIN_YEAR = 1900;
+	MAX_YEAR = 3000;
+//		MIN_YEAR = Integer.parseInt(minYearStr);
+//		MAX_YEAR = Integer.parseInt(maxYearStr);
 	}
 	
 	
