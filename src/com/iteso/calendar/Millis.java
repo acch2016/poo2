@@ -2,29 +2,27 @@ package com.iteso.calendar;
 import com.iteso.calendar.DateTime;
 //import com.iteso.calendar.DateGrupal; //porque no se usa? es decir que a traves de DateTime? 
 import java.util.Calendar;
+
 //import java.util.Date;
 //import java.sql.Timestamp;
 
+
 public class Millis extends DateTime {
 	
-	public static final int DAY; //= 1900;
-	public static final int HOUR; 
-	public static final int MINUTE;
-	public static final int SECOND; 
-	public static final int MILLISECOND; 
+	public static final int DAY=5,HOUR=4,MINUTE=3,SECOND=2,MILLISECOND=1; 
 	
 	private int milliseconds = 0;
 	private long timestamp = 0;
 //	byte flag_getMs = 0;
 //	byte flag_getTs = 0;
 
-	static {
-		DAY = 0; //= 1900;
-		HOUR = 0; 
-		MINUTE = 0;
-		SECOND = 0; 
-		MILLISECOND = 0; 
-	}
+//	static {
+//		DAY = 0;
+//		HOUR = 1; 
+//		MINUTE = 2;
+//		SECOND = 3; 
+//		MILLISECOND = 4; 
+//	}
 
 	public Millis() {
 		super();
@@ -41,9 +39,16 @@ public class Millis extends DateTime {
 	
 	public Millis(int dd, int mm, int yy) {
 		super(0, 0, 0, dd, mm, yy);
-//		super.setHours(0);
-//		super.setMinutes(0);
-//		super.setSeconds(0);
+		Calendar c = Calendar.getInstance();
+		c.set(Calendar.HOUR_OF_DAY, 0);
+		c.set(Calendar.MINUTE, 0);
+		c.set(Calendar.SECOND, 0);
+		c.set(Calendar.MILLISECOND, 0);
+		c.set(Calendar.DAY_OF_MONTH, dd);
+		c.set(Calendar.MONTH, mm-1);
+		c.set(Calendar.YEAR, yy);
+		long tstmp = c.getTimeInMillis();
+		setTimestamp(tstmp);
 	}
 
 	
@@ -55,9 +60,16 @@ public class Millis extends DateTime {
 	public Millis(int hh, int mi, int ss, int dd, int mm, int yy) {
 		super(hh, mi, ss, dd, mm, yy);
 		setMilliseconds(0);
-//		Calendar c = Calendar.getInstance();
-//		long tstmp = c.getTimeInMillis();
-//		setTimestamp(tstmp);
+		Calendar c = Calendar.getInstance();
+		c.set(Calendar.HOUR_OF_DAY, hh);
+		c.set(Calendar.MINUTE, mi);
+		c.set(Calendar.SECOND, ss);
+		c.set(Calendar.MILLISECOND, 0);
+		c.set(Calendar.DAY_OF_MONTH, dd);
+		c.set(Calendar.MONTH, mm-1);
+		c.set(Calendar.YEAR, yy);
+		long tstmp = c.getTimeInMillis();
+		setTimestamp(tstmp);
 	}
 	
 	public Millis(int hh, int mi, int ss, int ms, int dd, int mm, int yy) {
@@ -69,7 +81,7 @@ public class Millis extends DateTime {
 		c.set(Calendar.SECOND, ss);
 		c.set(Calendar.MILLISECOND, ms);
 		c.set(Calendar.DAY_OF_MONTH, dd);
-		c.set(Calendar.MONTH, mm);
+		c.set(Calendar.MONTH, mm-1);
 		c.set(Calendar.YEAR, yy);
 		long tstmp = c.getTimeInMillis();
 		setTimestamp(tstmp);
@@ -134,11 +146,56 @@ public class Millis extends DateTime {
 	}
 	
 	public void add(int constant, int offset) {
-
-	}
-	
-	public return_type name() {
+		
+		switch (constant){
+		case MILLISECOND:
+			this.timestamp += offset;
+			setTimestamp(this.timestamp);
+			break;
+		case SECOND: 
+			this.timestamp += offset*1000;
+			setTimestamp(this.timestamp);
+			break;
+		case MINUTE: 
+			this.timestamp += offset*60000;
+			setTimestamp(this.timestamp);
+			break;
+		case HOUR: 
+			this.timestamp += offset*60*60000;
+			setTimestamp(this.timestamp);
+			break;
+		case DAY: 
+			this.timestamp += offset*24*60*60000;
+			setTimestamp(this.timestamp);
+			break;
+		}	
 		
 	}
+	
+	public void next() {
+		add(Millis.MILLISECOND,1);
+	}
+	
+	public boolean isBefore(Millis millis) {
+		return this.timestamp < millis.timestamp; 
+	}
+	
+	public boolean isAfter(Millis millis) {
+		return this.timestamp > millis.timestamp; 
+	}
+	
+	static long timestampOf(DateTime dt) {
+		Calendar c = Calendar.getInstance();
+		c.set(Calendar.HOUR_OF_DAY, dt.getHours());
+		c.set(Calendar.MINUTE, dt.getMinutes());
+		c.set(Calendar.SECOND, dt.getSeconds());
+		c.set(Calendar.MILLISECOND, 0);
+		c.set(Calendar.DAY_OF_MONTH, dt.getDay());
+		c.set(Calendar.MONTH, dt.getMonth());
+		c.set(Calendar.YEAR, dt.getYear());
+		long tstmp = c.getTimeInMillis();
+		return tstmp;
+	}
+
 
 }

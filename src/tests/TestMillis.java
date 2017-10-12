@@ -1,6 +1,9 @@
 package tests;
-
+import com.iteso.calendar.DateTime;
 import com.iteso.calendar.Millis;
+//import com.iteso.calendar.Millis.timestampOf;
+
+
 public class TestMillis {
 
 	public static void main(String[] args) {
@@ -13,11 +16,11 @@ public class TestMillis {
 		
 		m1.setFormat(1);
 		System.out.println(m1);
-		// [11:15:48 AM] 9-Oct-2017 (1507565748913)
+		// [11:15:48 AM] 9-Oct-2017 (1507565748913) // TODO   -> now there is only the 6 hours offset
 		
 		m1.setFormat(2); 
 		System.out.println(m1);
-		// 9 de octubre de 2017 (1507565748913)
+		// 9 de octubre de 2017 (1507565748913) // TODO   -> now there is only the 6 hours offset
 		
 		Millis m2 = new Millis(15, 12, 2017);
 		System.out.println(m2);
@@ -33,12 +36,11 @@ public class TestMillis {
 		
 		int ms = m4.getMilliseconds();
 		System.out.println("ms = "+ms);
-//		System.out.println(ms);
 		// ms = 785
 		
 		long ts = m4.getTimestamp();
-		System.out.println("ts = "+ts);// TODO ts = 1513395952785  -> now there is only the 6 hours offset
-//		System.out.println(ts);
+		System.out.println("ts = "+ts);
+		// ts = 1513395952785
 		
 		Millis m5 = new Millis(1_307_169_163_000L);
 		System.out.println(m5);
@@ -53,7 +55,45 @@ public class TestMillis {
 		// [18:00:00.090] 31/12/69
 		
 		m4.add(Millis.DAY,16);
+		System.out.println(m4);
 		// [21:45:52.785] 31/12/17
+		
+		m4.add(Millis.HOUR,2);
+		System.out.println(m4);
+		// [23:45:52.785] 31/12/17
+		
+		m4.add(Millis.MINUTE,14);
+		System.out.println(m4);
+		// [23:59:52.785] 31/12/17
+		
+		m4.add(Millis.SECOND,7);
+		System.out.println(m4);
+		// [23:59:59.785] 31/12/17
+		
+		m4.add(Millis.MILLISECOND, 214);
+		System.out.println(m4);
+		// [23:59:59.999] 31/12/17
+		
+		m4.next();
+		System.out.println(m4);
+		// [00:00:00.000] 01/01/18
+		
+		System.out.println(m2.isBefore(m3));
+		// Imprime true
+		
+		System.out.println(m3.isBefore(m2));
+		// Imprime false
+		
+		System.out.println(m4.isAfter(m5));
+		// Imprime true
+		
+		System.out.println(m5.isAfter(m4));
+		// Imprime false
+		
+		DateTime dt = new DateTime(20, 53, 17, 4, 10, 2017);
+		long timestamp1 = Millis.timestampOf(dt);
+		 // 1507168397000
+	
 	}
 
 }
