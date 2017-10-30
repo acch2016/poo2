@@ -27,7 +27,7 @@ public class TestBasicOscillator {
 		 
 		// Delay so oscillator can be heard
 		
-		Thread.sleep(1000*4);
+		Thread.sleep(1000*2);
 //		delay(1000 * 4);  
 		 
 		// Stop the player

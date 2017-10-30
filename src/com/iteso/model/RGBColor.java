@@ -12,7 +12,7 @@ public class RGBColor {
 		//Llamada a un tercer constructor
 //		this(red,green,blue,"Indefinido");
 	}
-	public RGBColor( int red, int green, int blue, String name ){
+	public RGBColor( int red, int green, int blue, String name ) {
 		this(red,green,blue);
 //		setRed(red);
 //		setGreen(green);
@@ -36,8 +36,9 @@ public class RGBColor {
 	public int getRed() {
 		return red;
 	}
-	public void setRed(int red) {
-		if( red >= 0 && red <=255 ) this.red = red;
+	public void setRed(int red) throws IllegalArgumentException {
+		if( red >= 0 && red <=255 ) throw new IllegalArgumentException("Red value must be between 0 and 255");
+		this.red = red;
 	}
 	public int getGreen() {
 		return green;

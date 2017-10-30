@@ -8,7 +8,7 @@ public class Man extends Animal {
 		this.status = 3;
 	}
 	
-	private void think() {
+	public void think() {
 		System.out.println("Hombre pensando");
 		this.status = 4;
 	}

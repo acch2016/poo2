@@ -5,6 +5,21 @@ import java.util.Calendar;
 
 public class Millis extends DateTime {
 	
+	public enum Element {
+		DAY, HOUR, MINUTE, SECOND, MILLISECOND
+	}
+	
+	public void add1 (Element element, int offset) {	
+		switch (element) {
+			case SECOND : this.timestamp += offset * 1000; 
+						  setTimestamp(this.timestamp);
+						  break;
+			
+		
+		}
+	}
+	
+	
 	public static final int DAY=5,HOUR=4,MINUTE=3,SECOND=2,MILLISECOND=1; 
 	
 	private int milliseconds = 0;

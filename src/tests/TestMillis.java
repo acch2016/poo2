@@ -100,7 +100,9 @@ public class TestMillis {
 		long timestamp2 = Millis.timestampOf(d);
 		System.out.println(timestamp2);
 		// 1507093200000
-	
+		
+		m1.add1(Millis.Element.DAY, 5);
+//		m1.add1(-6, 8);
 	}
 
 }
