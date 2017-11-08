@@ -79,10 +79,29 @@ public class SingleLinkedList<E> {
 	}
 	
 	public SingleLinkedList<E> clone() {
+		
+		SingleLinkedList<E> listcloned = new SingleLinkedList<E>();
+//		SingleLinkedList<E> listclone;
 		Node actual = this.first;
-		Node actual2 = this.last;
-		int actual3 = this.size; 
-		return new SingleLinkedList<E>(actual,actual2,actual3);
+        while ( actual != null ){
+        	listcloned.add( actual.element );
+//       	listclone.add( actual.element );
+        	actual = actual.next;
+        }
+//		return new SingleLinkedList<E>(actual,actual2,actual3);
+        return listcloned;
+	}
+	
+	public boolean equals(SingleLinkedList<E> list) {
+		if(list.size==this.size){
+			
+			Node actual = this.first;
+			 for (;;){
+				 
+			 }
+			
+		}return false;
+		
 	}
 
 }
