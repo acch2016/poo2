@@ -12,11 +12,23 @@ public class SingleLinkedList<E> {
 		public Node next; 
 	}
 	
-	private Node first = null;
-	private Node last = null;
-	private int size = 0;
+	private Node first;
+	private Node last;
+	private int size;
+	
+	public SingleLinkedList() {
+		this.first = null;
+		this.last = null;
+		this.size = 0;
+	}
 
 	
+	public SingleLinkedList(SingleLinkedList<E>.Node first,SingleLinkedList<E>.Node last, int size) {
+//		Node actual = this.first;
+//		Node actual2 = this.last;
+//		int actual3 = this.size; 
+	}
+
 	public void add(E element) {
 //		public Node node1 = new Node(); 
 		Node node = new Node(element);
@@ -46,6 +58,8 @@ public class SingleLinkedList<E> {
 	}
 	
 	public int size() {
+//		Node actual = this.first;
+		//for(int i = 0; i < ;i++)
 		return this.size;
 	}
 	
@@ -62,6 +76,13 @@ public class SingleLinkedList<E> {
 			actual = actual.next;
 		}
 		actual.element = ELEMENT;
+	}
+	
+	public SingleLinkedList<E> clone() {
+		Node actual = this.first;
+		Node actual2 = this.last;
+		int actual3 = this.size; 
+		return new SingleLinkedList<E>(actual,actual2,actual3);
 	}
 
 }

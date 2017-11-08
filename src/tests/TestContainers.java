@@ -19,7 +19,22 @@ public class TestContainers {
 			String ELEMENT = element.toUpperCase();
 			list1.set(i, ELEMENT);
 			}
-			System.out.println(list1); // Imprime: [FIRST, SECOND, THIRD]
+		System.out.println(list1); // Imprime: [FIRST, SECOND, THIRD]
+		
+		SingleLinkedList<String> list2 = list1.clone();
+		//boolean equals = list1.equals(list2);
+		//System.out.println(equals); // Imprime: true
+		
+		int t=list2.size();
+		System.out.printf("%d\n",t);
+//		System.out.println(list2);
+		
+		for(int i = 0; i < list2.size(); i ++) {
+			String element = list2.get(i);
+			String ELEMENT = element.toLowerCase();
+			list2.set(i, ELEMENT);
+			}
+		//System.out.println(list1); // Imprime: [FIRST, SECOND, THIRD]
 
 	}
 
