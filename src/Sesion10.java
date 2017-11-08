@@ -18,8 +18,7 @@ public class Sesion10 {
 		
 		System.out.printf("Objetos creados: %s, %s. %s\n ",r1,r2,r3);
 //		Utilizar r2 para apuntar a un nuevo rectángulo.
-		
-		
+	
 		r2 = new Rectangle(7,5); //7x5
 		System.gc();
 //		JOptionPane.showMessageDialog(null, "Pausa 1");
@@ -27,7 +26,6 @@ public class Sesion10 {
 		r2 = null;
 		System.gc();
 //		JOptionPane.showMessageDialog(null, "Pausa 2");
-		
 		
 		// Run/Run configurations/ -Xmx8192M
 //		for(int i=0;i<100_000;i++){
