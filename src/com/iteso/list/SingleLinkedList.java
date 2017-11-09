@@ -47,7 +47,7 @@ public class SingleLinkedList<E> {
 	public String toString() {
 		Node actual = this.first;
 		String str_node_element = "[" + this.first.element.toString();
-		actual = actual.next;
+		actual = actual.next;//El segundo nodo se asigna al actual(temporal)
 		
 		for(int i = 0; i < this.size - 1; i++){
 			
@@ -93,16 +93,28 @@ public class SingleLinkedList<E> {
 	}
 	
 	public boolean equals(SingleLinkedList<E> list) {
-		if(list.size==this.size){
+		if( this.size == list.size ){
 			
-			Node actual = this.first;
-			 for (;;){
-				 
-			 }
+			Node actualThis = this.first;
+			Node actualList = list.first;
+			
+			for(int i = 0; i < this.size; i++){
+			
+				if(actualThis.element.equals(actualList.element)){
+					actualThis = actualThis.next;
+					actualList = actualList.next;
+				}else return false;
+			}return true;
 			
 		}return false;
 		
 	}
+	
+	public return_type remove(int indice) {
+		
+	}
+	
+
 
 }
 

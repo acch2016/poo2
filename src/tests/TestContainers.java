@@ -25,6 +25,12 @@ public class TestContainers {
 		boolean equals = list1.equals(list2);
 		System.out.println(equals); // Imprime: true
 		
+		String removed = list2.remove(0);
+		System.out.println(removed); // Imprime: FIRST
+		System.out.println(list2); // Imprime: [SECOND, THIRD]
+		equals = list1.equals(list2);
+		System.out.println(equals); // Imprime: false
+		
 
 		
 
