@@ -9,7 +9,7 @@ public class SingleLinkedList<E> {
 			this.element = element;
 		}
 		public E element = null;
-		public Node next; 
+		public Node next = null; 
 	}
 	
 	private Node first;
@@ -23,11 +23,9 @@ public class SingleLinkedList<E> {
 	}
 
 	
-	public SingleLinkedList(SingleLinkedList<E>.Node first,SingleLinkedList<E>.Node last, int size) {
-//		Node actual = this.first;
-//		Node actual2 = this.last;
-//		int actual3 = this.size; 
-	}
+//	public SingleLinkedList(SingleLinkedList<E>.Node first,SingleLinkedList<E>.Node last, int size) {
+//
+//	}
 
 	public void add(E element) {
 //		public Node node1 = new Node(); 
@@ -58,8 +56,6 @@ public class SingleLinkedList<E> {
 	}
 	
 	public int size() {
-//		Node actual = this.first;
-		//for(int i = 0; i < ;i++)
 		return this.size;
 	}
 	
@@ -110,9 +106,45 @@ public class SingleLinkedList<E> {
 		
 	}
 	
-	public return_type remove(int indice) {
+	
+	
+	public E remove(int indice) {
 		
+		E r_element = null;
+		
+		if(this.first == null) throw new RuntimeException("cannot delete");
+		
+		Node actual = this.first;
+	    Node prev = null;
+	    
+		if(0 == indice){
+	        prev = actual;
+			this.first = this.first.next;  // delete first node
+			r_element = prev.element;
+		}
+	    
+		int i = 1;
+		while(actual != null && i <= indice){
+			i++;
+
+			prev = actual;
+			actual = actual.next;
+//		    if(actual == null) throw new RuntimeException("cannot delete");
+			r_element = prev.next.element;
+			prev.next = actual.next;       // delete current node
+
+		}
+
+//		for(int i = 1; i <= indice ; i++){
+//			actual = actual.next;			
+//		}
+	    
+	    this.size --;
+		return r_element;
 	}
+	
+	
+
 	
 
 
