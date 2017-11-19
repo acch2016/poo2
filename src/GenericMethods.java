@@ -9,7 +9,8 @@ import java.util.Queue;
 import java.util.TreeSet;
 import java.util.Vector;
 
-import com.iteso.calendar.Date;
+//import com.iteso.calendar.Date;
+import com.iteso.calendar.DateGrupal;
 import com.iteso.calendar.DateTime;
 import com.iteso.model.RGBColor;
 
@@ -96,9 +97,9 @@ public class GenericMethods {
 //		changeQueue(intQueue, numberQueue); No válido porque Integer no es más general que Number
 		changeQueue(numberQueue, intQueue);
 		
-		ArrayDeque<Date> dateQueue = new ArrayDeque<>();
-			dateQueue.offer(new Date());
-			dateQueue.offer(new Date(15, 6, 2017));		
+		ArrayDeque<DateGrupal> dateQueue = new ArrayDeque<>();
+			dateQueue.offer(new DateGrupal());
+			dateQueue.offer(new DateGrupal(15, 6, 2017));		
 		ArrayDeque<DateTime> timeQueue = new ArrayDeque<>();
 			timeQueue.offer(new DateTime());
 			timeQueue.offer(new DateTime(23, 56, 35, 15, 6, 2017));
@@ -107,10 +108,10 @@ public class GenericMethods {
 		System.out.println("Date queue: " + dateQueue);
 		System.out.println("Time queue: " + timeQueue);
 		
-		LinkedList<Date> dateList = new LinkedList<Date>(); 
-		dateList.add(new Date());
-		dateList.add(new Date(25, 12, 2015));
-		dateList.add(new Date(16,  9, 1957));
+		LinkedList<DateGrupal> dateList = new LinkedList<DateGrupal>(); 
+		dateList.add(new DateGrupal());
+		dateList.add(new DateGrupal(25, 12, 2015));
+		dateList.add(new DateGrupal(16,  9, 1957));
 		print(dateList);
 		
 		ArrayList<RGBColor> colorList = new ArrayList<RGBColor>();
@@ -125,8 +126,8 @@ public class GenericMethods {
 		byteSet.add((byte) 110);
 //		print(byteSet); Llamada no válida porque TreeSet no implementa a List	
 		
-		System.out.println(frequency(dateList, new Date()));
-		System.out.println(frequency(dateList, new Date(25, 12, 2016)));
+		System.out.println(frequency(dateList, new DateGrupal()));
+		System.out.println(frequency(dateList, new DateGrupal(25, 12, 2016)));
 //		frequency(dateList, "Navidad"); No válido porque String no es Date (T)
 		
 		byte b = 50;

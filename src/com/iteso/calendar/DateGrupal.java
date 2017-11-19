@@ -4,7 +4,27 @@ import java.util.Calendar;
 
 import javax.swing.JOptionPane;
 
-public class DateGrupal {
+public class DateGrupal implements Comparable<DateGrupal>{
+	
+	
+	public static int equalsCalls = 0, hashCalls = 0;
+	
+	@Override
+	public int hashCode() {
+		hashCalls ++;
+//		return 2;
+//		return year * month *day;
+//		return monthName.length() + day;
+		return 385 * year + 32 * month + day;
+	}
+	
+	public static DateGrupal randomDate() {
+		int day = (int)(Math.random()   * 28) + 1;
+		int month = (int)(Math.random() * 12) + 1;
+		int year = (int)(Math.random()  * 200) + 1900;
+		return new DateGrupal(day, month, year, 1);
+//		28 x 12 x 200 = 67200 fechas diferentes
+	}
 
 	public static final int MIN_YEAR; //= 1900;
 	public static final int MAX_YEAR; //= 3000;
@@ -190,5 +210,23 @@ public class DateGrupal {
 	
 	public void m5(){
 		System.out.println("m5 de date");
+	}
+	
+	public void m6() {
+//		System.out.println("m6 de Date");
+		m5();
+	}
+
+	@Override
+	public int compareTo(DateGrupal date) {
+		// TODO Auto-generated method stub
+		if (this.year < date.year) return -1;
+		if (this.year > date.year) return  1;
+//		this.year == date.year
+		if (this.month < date.month) return -1;
+		if (this.month > date.month) return  1;
+//		this.month == date.month
+		return this.day - date.day;
+		
 	}
 }

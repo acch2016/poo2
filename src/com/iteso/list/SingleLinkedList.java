@@ -27,7 +27,12 @@ public class SingleLinkedList<E> {
 //
 //	}
 
-	public void add(E element) {
+	public void add(E element) throws NullElementException {
+		if (element == null) try {
+	            throw new NullElementException("Null values are not allowed in add method.");
+	        } catch (NullElementException e) {
+	            e.printStackTrace();
+	        }
 //		public Node node1 = new Node(); 
 		Node node = new Node(element);
 		if( 0 == this.size ){
@@ -59,14 +64,22 @@ public class SingleLinkedList<E> {
 		return this.size;
 	}
 	
-	public E get(int indice) {
-		Node actual = this.first;
-		for(int x = 0; x < indice ; x++){
-			actual = actual.next;
-		}return actual.element;
+	public E get(int indice) throws IndexOutOfBoundsException{
+        if (indice > this.size -1 ) throw new IndexOutOfBoundsException("Index must be in the range [0..2]");
+        else{
+        	Node actual = this.first;
+        	for(int x = 0; x < indice ; x++){
+        		actual = actual.next;
+        	}return actual.element;
+        }
 	}
 
-	public void set(int indice, E ELEMENT) {
+	public void set(int indice, E ELEMENT)  throws /*IndexOutOfBoundsException,*/ NullElementException {
+		
+//        if (indice < 0 || indice > 1) throw new IndexOutOfBoundsException("Index must be in the range[0...1]");
+
+        if(ELEMENT == null) throw new NullElementException("Null values are not allowed in add method.");
+        
 		Node actual = this.first;
 		for(int x = 0; x < indice ; x++){
 			actual = actual.next;
@@ -80,8 +93,12 @@ public class SingleLinkedList<E> {
 //		SingleLinkedList<E> listclone;
 		Node actual = this.first;
         while ( actual != null ){
+        	try {
         	listcloned.add( actual.element );
 //       	listclone.add( actual.element );
+        	 } catch (NullElementException e) {
+        		 e.printStackTrace();
+        	}
         	actual = actual.next;
         }
 //		return new SingleLinkedList<E>(actual,actual2,actual3);
@@ -109,10 +126,12 @@ public class SingleLinkedList<E> {
 	
 	
 	public E remove(int indice) {
+		 
+//		if (indice < 0 && indice > 1) throw new IndexOutOfBoundsException("Index must be in the range [0...1]");
 		
 		E r_element = null;
 		
-		if(this.first == null) throw new RuntimeException("cannot delete");
+//		if(this.first == null) throw new RuntimeException("cannot delete");
 		
 		Node actual = this.first;
 	    Node prev = null;

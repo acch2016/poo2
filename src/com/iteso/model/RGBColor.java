@@ -117,7 +117,7 @@ public class RGBColor {
 	
 	@Override
 	public String toString(){
-		return String.format("{red: %d, green: %d, blue: %d, name: %s}", 
+		return String.format("{red: %d, green: %d, blue: %d, name: %s}\n", 
 				              this.red, this.green, this.blue, this.name);
 	}
 	
