@@ -58,8 +58,8 @@ public class GenericMethods {
 	
 	public static <T> void changeQueue(Queue<? super T>   dest, 
 			                           Queue<? extends T> src) {
-//		Object objectInDest = dest.peek();
-		T objectInSrc = src.poll();
+//		Object objectInDest = dest.peek();//El tipo de dato Object es el mas general
+		T objectInSrc = src.poll();//El tipo de dato T es el mas general
 		dest.offer(objectInSrc);				
 	}
 	

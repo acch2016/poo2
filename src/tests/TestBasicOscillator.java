@@ -11,7 +11,7 @@ public class TestBasicOscillator {
 		BasicOscillator osc = new BasicOscillator();
 		 
 		// Set the frequency
-		osc.setFrequency(500);
+		osc.setFrequency(300);
 		 
 		// Set the waveashape
 		osc.setOscWaveshape(WAVESHAPE.SQU);
@@ -27,7 +27,7 @@ public class TestBasicOscillator {
 		 
 		// Delay so oscillator can be heard
 		
-		Thread.sleep(1000*2);
+		Thread.sleep(1000*1);
 //		delay(1000 * 4);  
 		 
 		// Stop the player

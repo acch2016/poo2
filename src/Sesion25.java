@@ -23,7 +23,7 @@ public class Sesion25 {
 		return distance / numbers.length;
 	}
 	
-	static class StringList extends ArrayList<String> {
+	static class StringList extends ArrayList<String> {//Es como un TypeDef 
 		@Override
 		public int size() {
 //			System.out.println("Ahí te va el tamaño: " + super.size());

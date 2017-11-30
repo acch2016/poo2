@@ -97,14 +97,22 @@ public class Player extends Thread {
 		double i     = sampleNumber_i / (double) PERIOD_SAMPLES_i;
 //		double j     = sampleNumber_j / (double) PERIOD_SAMPLES_j;
 		
-		int PERIOD_SAMPLES3b = (int) (SAMPLE_RATE / ((200*Math.sin(2.0 * Math.PI * z)) + 400) );		
-		double zb     = sampleNumber3b / (double) PERIOD_SAMPLES3b;
+//		int PERIOD_SAMPLES3b = (int) (SAMPLE_RATE / ((200*Math.sin(2.0 * Math.PI * z)) + 400) );		
+//		double zb     = sampleNumber3b / (double) PERIOD_SAMPLES3b;
+//		
+//		int PERIOD_SAMPLES_noise = (int) (SAMPLE_RATE / ( (300*Math.random())+700) );
+//	
+//		double n     = sampleNumber_noise / (double) PERIOD_SAMPLES_noise;
 		
-		int PERIOD_SAMPLES_noise = (int) (SAMPLE_RATE / ( (300*Math.random())+700) );
-	
-		double n     = sampleNumber_noise / (double) PERIOD_SAMPLES_noise;
-		
-		double value = Math.sin(2.0 * Math.PI * 1  ); // Original
+		 
+
+		double value;  //Triangular
+		 if (sampleNumber < (PERIOD_SAMPLES / 2)) {
+			value = ( (4*x)-1 );
+		}else{
+			value = ( (-4*x)+3 );
+		}
+//		double value = Math.sin(2.0 * Math.PI * x  ); // Original
 //		double value = Math.sin(2.0 * Math.PI * x  ) * Math.sin(2.0 * Math.PI * y); //AM Modulacion de anillo
 //		double value = Math.sin(2.0 * Math.PI * x  ) * Math.sin(2.0 * Math.PI * y) * Math.sin(2.0 * Math.PI * a  ) * Math.sin(2.0 * Math.PI * b) * Math.sin(2.0 * Math.PI * c  ) * Math.sin(2.0 * Math.PI * d) * Math.sin(2.0 * Math.PI * e  ) * Math.sin(2.0 * Math.PI * f) * Math.sin(2.0 * Math.PI * g  ) * Math.sin(2.0 * Math.PI * h) * Math.sin(2.0 * Math.PI * i  ); //AM 11 frecuencias
 //		double value = Math.sin(2.0 * Math.PI * zb ); //FM
@@ -114,9 +122,9 @@ public class Player extends Thread {
 		this.sampleNumber2 = (sampleNumber2 + 1) % PERIOD_SAMPLES2;
 		
 		this.sampleNumber3 = (sampleNumber3 + 1) % PERIOD_SAMPLES3;
-		this.sampleNumber3b = (sampleNumber3b + 1) % PERIOD_SAMPLES3b;
+//		this.sampleNumber3b = (sampleNumber3b + 1) % PERIOD_SAMPLES3b;
 		
-		this.sampleNumber_noise = (sampleNumber_noise + 1) % PERIOD_SAMPLES_noise;
+//		this.sampleNumber_noise = (sampleNumber_noise + 1) % PERIOD_SAMPLES_noise;
 		
 		this.sampleNumber_a = (sampleNumber_a + 1) % PERIOD_SAMPLES_a;
 		this.sampleNumber_b = (sampleNumber_b + 1) % PERIOD_SAMPLES_b;
@@ -129,5 +137,22 @@ public class Player extends Thread {
 		this.sampleNumber_i = (sampleNumber_i + 1) % PERIOD_SAMPLES_i;
 		return value;
 	}
+	
+//	public double temp = 0; 
+//	public double triangularFunction(double fp) {
+//		double Tp = 1/fp;
+//		double 
+//		double Np = Tp/Ts;
+		
+		
+		
+//		double[] array= {0.000000,0.041670,0.083330,0.125000,0.166670,0.208330,0.250000,0.291670,0.333330,0.375000,0.416670,0.458330,0.500000,0.541670,0.583330,0.625000,0.666670,0.708330,0.750000,0.791670,0.833330,0.875000,0.916670,0.958330,1.000000,0.990000,0.949390,0.908780,0.868160,0.827550,0.786940,0.746330,0.705710,0.665100,0.624490,0.583880,0.543270,0.502650,0.462040,0.421430,0.380820,0.340200,0.299590,0.258980,0.218370,0.177760,0.137140,0.096530,0.055920,0.015310,-0.025310,-0.065920,-0.106530,-0.147140,-0.187760,-0.228370,-0.268980,-0.309590,-0.350200,-0.390820,-0.431430,-0.472040,-0.512650,-0.553270,-0.593880,-0.634490,-0.675100,-0.715710,-0.756330,-0.796940,-0.837550,-0.878160,-0.918780,-0.959390,-1.000000,-0.990000,-0.949170,-0.908330,-0.867500,-0.826670,-0.785830,-0.745000,-0.704170,-0.663330,-0.622500,-0.581670,-0.540830,-0.500000,-0.459170,-0.418330,-0.377500,-0.336670,-0.295830,-0.255000,-0.214170,-0.173330,-0.132500,-0.091670,-0.050830,-0.010000};
+//		
+//		for(double valor : array){
+//			temp = valor;
+//		}
+//		return temp;
+//	}
+	
 
 }
